@@ -29,7 +29,7 @@ def driver(request):
 
     # Option setup to run in headless mode (in order to run this in GH Actions)
     options = Options()
-   # options.add_argument('--headless')
+    options.add_argument('--headless')
 
     # Setup
     print(f"\nSetting up: {browser} driver")
@@ -39,7 +39,7 @@ def driver(request):
         driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 
     # Implicit wait setup for our framework
-    driver.implicitly_wait(10)
+    #driver.implicitly_wait(10)
     yield driver
 
     # Tear down
