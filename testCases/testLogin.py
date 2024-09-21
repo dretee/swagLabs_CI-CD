@@ -7,6 +7,9 @@ from LoginObjects import loginObjects
 class TestLoginDDT001:
     base_url = "https://www.saucedemo.com"
     logger = Information_Logger.logging_info()
+    Username_ID = 'user-name'
+    Password_ID = 'password'
+    Login_Button_ID = 'login-button'
 
     def page_navigation(self, driver):
         # Initialize the test and log the start
@@ -32,11 +35,12 @@ class TestLoginDDT001:
         # Url navigation
         self.page_navigation(self.driver)
         self.logger.info("***** NAVIGATING TO THE TEST PAGE ******")
-        # Initialize loginObjects
-        self.li = loginObjects(self.driver)
-        self.li.GetUserName("standard_user")
-        self.li.GetUserPassword("secret_sauce")
-        self.li.ClickSubmit()
+        element = self.driver.find_element(By.ID, self.Username_ID)
+        element.send_keys("standard_user")
+
+        element1 = self.driver.find_element(By.ID, self.Password_ID)
+        element1.send_keys("secret_sauce")
+        self.driver.find_element(By.ID, self.Login_Button_ID).click()
         assert "Swag Labs" in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
             "***** THIS TEST FAILED ******")
         self.logger.info("***** THIS TEST PASSED ******")
@@ -50,10 +54,13 @@ class TestLoginDDT001:
         self.driver = driver
         self.page_navigation(self.driver)
         self.logger.info("***** TESTING INVALID LOGIN ******")
-        self.li = loginObjects(driver)
-        self.li.GetUserName(username)
-        self.li.GetUserPassword(password)
-        self.li.ClickSubmit()
+        s
+        element = self.driver.find_element(By.ID, self.Username_ID)
+        element.send_keys(username)
+
+        element1 = self.driver.find_element(By.ID, self.Password_ID)
+        element1.send_keys(password)
+        self.driver.find_element(By.ID, self.Login_Button_ID).click()
         body_text = driver.find_element(By.TAG_NAME, "body").text
         assert error_message in body_text, self.logger.info("***** TEST FAILED ******")
         self.logger.info("***** TEST PASSED ******")
