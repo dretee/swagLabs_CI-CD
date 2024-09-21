@@ -7,6 +7,11 @@ from LoginObjects import loginObjects
 class TestLoginDDT001:
     base_url = "https://www.saucedemo.com"
     logger = Information_Logger.logging_info()
+    Username_ID = 'user-name'
+    Password_ID = 'password'
+    Login_Button_ID = 'login-button'
+    Bugger_Button_ID = "react-burger-menu-btn"
+    logout_button_ID = 'logout_sidebar_link'
 
     def page_navigation(self, driver):
         # Initialize the test and log the start
@@ -34,9 +39,14 @@ class TestLoginDDT001:
         self.logger.info("***** NAVIGATING TO THE TEST PAGE ******")
         # Initialize loginObjects
         self.li = loginObjects(self.driver)
-        self.li.GetUserName("standard_user")
-        self.li.GetUserPassword("secret_sauce")
-        self.li.ClickSubmit()
+        # input username
+        element = self.driver.find_element(By.ID, self.Username_ID)
+        element.send_keys("standard_user")
+        # input password
+        element1 = self.driver.find_element(By.ID, self.Password_ID)
+        element1.send_keys("secret_sauce")
+
+        self.driver.find_element(By.ID, self.Login_Button_ID).click()
         assert "Swag Labs" in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
             "***** THIS TEST FAILED ******")
         self.logger.info("***** THIS TEST PASSED ******")
