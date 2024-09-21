@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v3
         if: success() || failure()
       - run:  |
-          cd test
+          cd testCases
           mkdir -p Test_reports
 
           pytest  testLogin.py -- browser=Firefox --html=Test_reports/Firefox_Test_reports.html
