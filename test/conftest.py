@@ -12,7 +12,6 @@ from webdriver_manager.firefox import GeckoDriverManager
 
 # Import options for headless mode
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
 
 def pytest_addoption(parser):
@@ -24,33 +23,20 @@ def pytest_addoption(parser):
 @pytest.fixture()
 def driver(request):
     browser = request.config.getoption("--browser")
-
     # Default driver value
-    driver = None
-
-    # Chrome and Firefox headless options setup
-    chrome_options = Options()
-    chrome_options.add_argument('--headless')
-    chrome_options.add_argument('--disable-gpu')  # Added for stability in headless mode
-
-    firefox_options = FirefoxOptions()
-    firefox_options.add_argument('--headless')
-
+    driver = webdriver.Chrome()
+    # Option setup to run in headless mode (in order to run this in GH Actions)
+    options = Options()
+    options.add_argument('--headless')
     # Setup
     print(f"\nSetting up: {browser} driver")
     if browser == "chrome":
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     elif browser == "firefox":
-        driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=firefox_options)
-    else:
-        raise ValueError(f"Browser '{browser}' is not supported. Use 'chrome' or 'firefox'.")
-
-    # Implicit wait setup for the WebDriver
+        driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
+    # Implicit wait setup for our framework
     driver.implicitly_wait(10)
-
-    # Yield driver for use in tests
     yield driver
-
-    # Tear down after tests
-    print(f"\nTearing down: {browser} driver")
+    # Tear down
+    print(f"\nTear down: {browser} driver")
     driver.quit()
