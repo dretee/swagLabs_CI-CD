@@ -32,7 +32,6 @@ jobs:
           pytest  testLogin.py -- browser=Firefox --html=Test_reports/Firefox_Test_reports.html
           chmod 777  Test_reports/Firefox_Test_Report.html
 
-
       - name: Set output
         if: success() || failure()
         id: results
