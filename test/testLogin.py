@@ -39,7 +39,7 @@ class TestLoginDDT001:
         self.li.ClickSubmit()
         assert "Swag Labs" in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
             "***** TEST FAILED ******")
-        self.logger.info("***** TEST PASSED ******")
+        self.logger.info("***** THIS TEST PASSED ******")
 
     # Negative Tes Cases
     @pytest.mark.parametrize("username, password, error_message", [
