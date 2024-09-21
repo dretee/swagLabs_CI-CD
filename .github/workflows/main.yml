@@ -28,10 +28,7 @@ jobs:
         if: success() || failure()
       - run:  |
           cd test
-          mkdir -p Chrome_Test_reports
-          pytest  testLogin.py -- browser=chrome --html=reports/Chrome_Test_reports.html
-          chmod 777  reports/Chrome_Test_Report.html
-
+          mkdir -p Firefox_Test_reports
           pytest  testLogin.py -- browser=Firefox --html=reports/Firefox_Test_reports.html
           chmod 777  reports/Firefox_Test_Report.html
 
