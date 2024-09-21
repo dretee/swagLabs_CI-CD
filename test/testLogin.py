@@ -1,7 +1,6 @@
 import pytest
 from selenium.webdriver.common.by import By
 from Utilities.Logger import Information_Logger
-from LoginObjects import loginObjects
 
 
 class TestLoginDDT001:
