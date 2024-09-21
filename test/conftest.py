@@ -25,7 +25,7 @@ def driver(request):
     browser = request.config.getoption("--browser")
 
     # Default driver value
-    driver = ""
+    driver = None
 
     # Option setup to run in headless mode (in order to run this in GH Actions)
     options = Options()
