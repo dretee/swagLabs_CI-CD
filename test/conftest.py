@@ -39,9 +39,9 @@ def driver(request):
         driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 
     # Implicit wait setup for our framework
-    #driver.implicitly_wait(10)
+    driver.implicitly_wait(10)
     yield driver
 
     # Tear down
     print(f"\nTear down: {browser} driver")
-    #driver.quit()
+    driver.quit()
