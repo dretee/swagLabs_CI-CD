@@ -26,13 +26,13 @@ jobs:
       run: |
         cd test
         mkdir -p reports
-        pytest --browser chrome --headless --html=reports/Chrome_Test_Report.html
+        pytest --browser chrome --html=reports/Chrome_Test_Report.html
 
     # Step 5: Run tests with Firefox
     - name: Run Selenium Tests on Firefox
       run: |
         cd test
-        pytest --browser firefox --headless --html=reports/Firefox_Test_Report.html
+        pytest --browser firefox --html=reports/Firefox_Test_Report.html
 
     # Step 6: Upload test reports
     - name: Upload Test Reports
