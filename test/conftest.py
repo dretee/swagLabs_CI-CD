@@ -44,4 +44,4 @@ def driver(request):
 
     # Tear down
     print(f"\nTear down: {browser} driver")
-    driver.quit()
+    #driver.quit()
