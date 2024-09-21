@@ -38,7 +38,7 @@ class TestLoginDDT001:
         self.li.GetUserPassword("secret_sauce")
         self.li.ClickSubmit()
         assert "Swag Labs" in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
-            "***** TEST FAILED ******")
+            "***** THIS TEST FAILED ******")
         self.logger.info("***** THIS TEST PASSED ******")
 
     # Negative Tes Cases
