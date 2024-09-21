@@ -29,7 +29,7 @@ jobs:
       - run:  |
           cd test
           mkdir -p Firefox_Test_reports
-          pytest  testLogin.py -- browser=Firefox --html=reports/Firefox_Test_reports.html
+          pytest  testLogin.py --browser=Firefox --html=reports/Firefox_Test_reports.html
           chmod 777  reports/Firefox_Test_Report.html
 
 
