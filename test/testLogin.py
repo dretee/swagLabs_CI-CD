@@ -41,6 +41,7 @@ class TestLoginDDT001:
             "***** TEST FAILED ******")
         self.logger.info("***** TEST PASSED ******")
 
+    # Negative Tes Cases
     @pytest.mark.parametrize("username, password, error_message", [
         ("locked_out_user", "secret_sauce", "Epic sadface: Sorry, this user has been locked out."),
         ("invalidUser", "invalidPass", "Epic sadface: Username and password do not match any user in this service"),
