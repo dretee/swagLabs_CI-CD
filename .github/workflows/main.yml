@@ -65,7 +65,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: selenium-test-report
-          path: tests/reports/report.html
+          path: test/reports/report.html
 
       # Send email notification if tests fail
       - name: Send Email Notification on Failure
