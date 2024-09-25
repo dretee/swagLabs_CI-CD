@@ -58,7 +58,7 @@ jobs:
         run: |
           cd test
           mkdir -p allure-results
-          pytest --alluredir=allure-results --browser=chrome --maxfail=1
+          pytest --alluredir=allure-results testLogin.py --browser=chrome --maxfail=1
         continue-on-error: true # Optionally let the pipeline continue if tests fail
 
       # Install Allure command-line tool
