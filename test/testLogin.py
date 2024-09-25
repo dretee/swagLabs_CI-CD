@@ -13,7 +13,7 @@ class TestLoginDDT001:
 
     def page_navigation(self, driver):
         # Initialize the test and log the start
-        self.logger.info("***** STARTING THE TEST ******")
+        self.logger.info("***** STARTING THE TESTS ******")
         self.logger.info("***** STARTING THE LOGIN HOMEPAGE TEST ******")
 
         # Set up the WebDriver and navigate to the base URL
