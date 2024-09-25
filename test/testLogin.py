@@ -53,7 +53,7 @@ class TestLoginDDT001:
         self.driver = driver
         self.page_navigation(self.driver)
         self.logger.info("***** TESTING INVALID LOGIN ******")
-        s
+
         element = self.driver.find_element(By.ID, self.Username_ID)
         element.send_keys(username)
 
