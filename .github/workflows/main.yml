@@ -57,7 +57,7 @@ jobs:
         run: |
           cd test
           mkdir -p reports
-          pytest test_login_page.py --browser=chrome --html=reports/report.html --maxfail=1
+          pytest testLogin.py --browser=chrome --html=reports/report.html --maxfail=1
         continue-on-error: true # Optionally let the pipeline continue if tests fail
 
       # Upload Test Reports
