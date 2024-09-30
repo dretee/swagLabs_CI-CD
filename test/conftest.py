@@ -36,7 +36,7 @@ def driver(request):
     if browser == "chrome":
         driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     elif browser == "firefox":
-        driver = webdriver.Firefox(service=FirefoxService(executable_path=gecko_driver_path), options=options)
+        driver = webdriver.Firefox(service=FirefoxService(executable_path=GECKO_DRIVER), options=options)
 
     # Implicit wait setup for our framework
     #driver.implicitly_wait(10)
