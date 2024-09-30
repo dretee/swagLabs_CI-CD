@@ -56,44 +56,42 @@ jobs:
           GECKO_DRIVER: /usr/local/bin/geckodriver
 
 
-      # Installing dependencies for running the selenuim test
+      # Installing dependencies for running the selenium test
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    # Running the tes on firefox browser 
-      - name: Runing test on firefox browser
+    # Running the tes on the Firefox browser 
+      - name: Running test on Firefox browser
         run: |
             cd test
             mkdir -p reports 
             pytest testLogin.py --browser=firefox --html=reports/Firefox-report.html -maxfail=2
             continue-on-error: false   #stop the pipeline if the tests fail
 
-    # run the test on chrome browser 
-      - name: Running test on chrome broswer
+    # run the test on the Chrome browser 
+      - name: Running test on Chrome browser
         run: |
           cd test
           midir reports 
-          pytest testlogin.py --browser=chrome --html=reports/chrome-report.html -maxfail=2
+          pytest testLogin.py --browser=chrome --html=reports/chrome-report.html -maxfail=2
           continue-on-error: true 
 
-          
-
+        
       # Upload chrome reports
-      - name: Uplaod results for test 
-        run: actions/upload-artifact@v3
-          with:
-            name: Selenium-test-chrome-results
-            path: test/reports/chrome-report.html
+      - name: Upload results for test 
+        uses: actions/upload-artifact@v3
+        with:
+          name: selenium-test-chrome-results
+          path: test/reports/chrome-report.html
 
-
-        # upload firefox results 
-        - name: Upload firefox results for test
-          run: actions/upload-artifact@v3
-            with:
-              name: selenium-test-firefox-results
-              path: test/reports/Firefox-report.html
+        # Upload Firefox results 
+      - name: Upload Firefox results for test
+        uses: actions/upload-artifact@v3
+        with:
+            name: selenium-test-firefox-results
+            path: test/reports/Firefox-report.html
                     
         
 
