@@ -46,11 +46,11 @@ jobs:
           
           # Install Firefox
           sudo apt-get install -y firefox
-          wget -N Https://github.com/mozilla/geckodriver/releases/tag/v0.35.0/geckodriver-v0.35.0-linux64.tar.gz 
-          tar -xvzf geckodriver-v0.33.0-linux64.tar.gz
+          # Use the correct version for GeckoDriver
+          wget -N https://github.com/mozilla/geckodriver/releases/download/v0.35.0/geckodriver-v0.35.0-linux64.tar.gz
+          tar -xvzf geckodriver-v0.35.0-linux64.tar.gz
           sudo mv geckodriver /usr/local/bin/
-          sudo chmod +x /usr/local/bin/geckodriver
-        
+          sudo chmod +x /usr/local/bin/geckodriver   
         env:
           CHROME_BIN: /usr/bin/google-chrome
           CHROME_DRIVER: /usr/local/bin/chromedriver
