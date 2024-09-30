@@ -6,6 +6,7 @@ on:
     branches:
       - main
   pull_request:
+    branches:
       - main
 
 
@@ -21,7 +22,7 @@ jobs:
         
     # Downloading python latest version 
       - name: Download python onto the Virtual Machine
-        uses: actions/setup-python@V3
+        uses: actions/setup-python@v3
         with:
             python-version: "3.10"
 
@@ -67,16 +68,16 @@ jobs:
         run: |
             cd test
             mkdir -p reports 
-            pytest testLogin.py --browser=firefox --html=reports/Firefox-report.html -maxfail=2
-            continue-on-error: false   #stop the pipeline if the tests fail
+            pytest testLogin.py --browser=firefox --html=reports/Firefox-report.html --maxfail=2
+        continue-on-error: false   #stop the pipeline if the tests fail
 
     # run the test on the Chrome browser 
       - name: Running test on Chrome browser
         run: |
           cd test
-          midir reports 
-          pytest testLogin.py --browser=chrome --html=reports/chrome-report.html -maxfail=2
-          continue-on-error: true 
+          mkdir reports 
+          pytest testLogin.py --browser=chrome --html=reports/chrome-report.html --maxfail=2
+        continue-on-error: true 
 
         
       # Upload chrome reports
