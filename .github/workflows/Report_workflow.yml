@@ -1,0 +1,100 @@
+name: Trying out a new reporting system
+
+
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+      - main
+
+
+jobs:
+  run-selenium-Test:
+    name: Run selenium test
+    runs-on: ubuntu-latest
+
+    steps:
+    # checkout/ download the repo to run on the ubuntu latest version VM
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        
+    # Downloading python latest version 
+      - name: Download python onto the Virtual Machine
+        uses: actions/setup-python@V3
+        with:
+            python-version: "3.10"
+
+
+        # Cache Python dependencies
+      - name: Cache Python dependencies
+        uses: actions/cache@v3  
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Set up Chrome, Firefox, GeckoDriver and ChromeDriver
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+          wget -N https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip
+          sudo mv -f chromedriver /usr/local/bin/chromedriver
+          sudo chmod +x /usr/local/bin/chromedriver
+          sudo apt-get install -y firefox
+          wget -N https://github.com/mozilla/geckodriver/releases/latest/download/geckodriver-v0.33.0-linux64.tar.gz
+          tar -xvzf geckodriver-v0.33.0-linux64.tar.gz
+          sudo mv geckodriver /usr/local/bin/
+          sudo chmod +x /usr/local/bin/geckodriver
+        
+        env:
+          CHROME_BIN: /usr/bin/google-chrome
+          CHROME_DRIVER: /usr/local/bin/chromedriver   
+          FIREFOX_BIN: /usr/bin/firefox
+          GECKO_DRIVER: /usr/local/bin/geckodriver
+
+
+      # Installing dependencies for running the selenuim test
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    # Running the tes on firefox browser 
+      - name: Runing test on firefox browser
+        run: |
+            cd test
+            mkdir -p reports 
+            pytest testLogin.py --browser=firefox --html=reports/Firefox-report.html -maxfail=2
+            continue-on-error: false   #stop the pipeline if the tests fail
+
+    # run the test on chrome browser 
+      - name: Running test on chrome broswer
+        run: |
+          cd test
+          midir reports 
+          pytest testlogin.py --browser=chrome --html=reports/chrome-report.html -maxfail=2
+          continue-on-error: true 
+
+          
+
+      # Upload chrome reports
+      - name: Uplaod results for test 
+        run: actions/upload-artifact@v3
+          with:
+            name: Selenium-test-chrome-results
+            path: test/reports/chrome-report.html
+
+
+        # upload firefox results 
+        - name: Upload firefox results for test
+          run: actions/upload-artifact@v3
+            with:
+              name: selenium-test-firefox-results
+              path: test/reports/Firefox-report.html
+                    
+        
+
+        
