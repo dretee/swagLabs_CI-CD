@@ -16,7 +16,7 @@ from selenium.webdriver.chrome.options import Options
 
 def pytest_addoption(parser):
     parser.addoption(
-        "--browser", action="store", default="chrome", help="Send 'chrome' or 'firefox' as parameter for execution"
+        "--browser", action="store", default="chrome", help="Send 'chrome' or 'firefox' as a parameter for execution"
     )
 
 
@@ -27,7 +27,7 @@ def driver(request):
     # Default driver value
     driver = ""
 
-    # Option setup to run in headless mode (in order to run this in GH Actions)
+    # Option setup to run in headless mode (to run this in GH Actions)
     options = Options()
     options.add_argument('--headless')
 
@@ -36,7 +36,7 @@ def driver(request):
     if browser == "chrome":
         driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     elif browser == "firefox":
-        driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
+        driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()),  options=options)
 
     # Implicit wait setup for our framework
     #driver.implicitly_wait(10)
