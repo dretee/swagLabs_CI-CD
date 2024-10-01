@@ -65,7 +65,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: login-test-report
-          path: tests/reports/report_for_login_tests.html
+          path: test/reports/report_for_login_tests.html
 
       # Run Selenium tests
       - name: Run selenium tests on adding items to the cart
@@ -80,7 +80,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: add-to-cart-test-report
-          path: tests/reports/report_for_addition_to_cart.html
+          path: test/reports/report_for_addition_to_cart.html
 
 
       # Run Selenium tests
@@ -96,7 +96,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: broken-links-test-report
-          path: tests/reports/report_for_testing_for_broken_links.html
+          path: test/reports/report_for_testing_for_broken_links.html
 
       # Send email notification if tests fail
       - name: Send Email Notification on Failure
