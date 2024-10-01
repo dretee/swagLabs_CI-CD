@@ -71,7 +71,6 @@ class TestCheckOutProcess():
                                                    "//h2[normalize-space()='Thank you for your order!']").text
 
             displayed_text = "Thank you for your order!"
-            self.driver.quit()
             assert actual_text.__eq__(displayed_text), "*********** TEST FAILED ************"
             self.logger.info("******** TEST WAS SUCCESSFUL *********")
 
@@ -115,6 +114,5 @@ class TestCheckOutProcess():
         # Verify if the order was not placed successfully
         body_text = self.driver.find_element(By.TAG_NAME, "body").text
         displayed_text = "Thank you for your order!"  # Displayed message when an order has been placed
-        self.driver.quit()
         assert displayed_text not in body_text, "******* TEST FAILED: ORDER WAS PLACED WITH NO ITEM ORDERED *******"
         self.logger.info("******* TEST SUCCESSFUL: THE ORDER WAS NOT PLACED ********")

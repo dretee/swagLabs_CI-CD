@@ -104,7 +104,7 @@ jobs:
         run: |
           cd test
           mkdir -p reports
-          pytest removeitemsFromCart.py --browser=chrome --html=reports/report_for_testing_the_removal_of_items_from_cart.html --maxfail=3
+          pytest removeItemsFromCart.py --browser=chrome --html=reports/report_for_testing_the_removal_of_items_from_cart.html --maxfail=3
         continue-on-error: true # Optionally let the pipeline continue if tests fail
 
       # Upload the Broken Links test report
