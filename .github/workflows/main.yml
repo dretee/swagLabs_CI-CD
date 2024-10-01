@@ -100,7 +100,7 @@ jobs:
 
 
       # Run Selenium tests
-      - name: Run selenium tests
+      - name: Run selenium tests for the removal of items from the cart
         run: |
           cd test
           mkdir -p reports
@@ -108,14 +108,14 @@ jobs:
         continue-on-error: true # Optionally let the pipeline continue if tests fail
 
       # Upload the Broken Links test report
-      - name: Upload Broken Links Test Report
+      - name: Upload for the removal of items from the cart
         uses: actions/upload-artifact@v4
         with:
-          name: broken-links-test-report
+          name: removal_of_items_from_cart-test-report
           path: test/reports/report_for_testing_the_removal_of_items_from_cart.html
 
       # Run Selenium tests
-      - name: Run selenium tests to check that all the links on the page are active
+      - name: Run selenium tests for the checkout functionality
         run: |
           cd test
           mkdir -p reports
@@ -123,10 +123,10 @@ jobs:
         continue-on-error: true # Optionally let the pipeline continue if tests fail
 
       # Upload the Broken Links test report
-      - name: Upload Broken Links Test Report
+      - name: Upload the checkout functionality test report
         uses: actions/upload-artifact@v4
         with:
-          name: broken-links-test-report
+          name: Item_checkout-test-report
           path: test/reports/report_for_testing_the_checkout_feature.html
 
 
