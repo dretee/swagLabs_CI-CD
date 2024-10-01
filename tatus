@@ -1,0 +1,212 @@
+[33mcommit f4881eb9eab75f1684fbfe928260e376b7cf4445[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Tue Oct 1 13:08:48 2024 +0100
+
+    Addition of new test cases to check for additions of items to the cart and checking for briken links
+
+[33mcommit 3f3d3871f4adaa944299eeaf88758b30561ace9c[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Tue Oct 1 11:28:32 2024 +0100
+
+    Set up CI with Azure Pipelines
+    
+    [skip ci]
+
+[33mcommit e0a45b4b5e22d678d576fd6727ded107a16f1f89[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Mon Sep 30 14:19:04 2024 +0100
+
+    Update conftest.py
+
+[33mcommit b74142da0e1319cfcdcd308d59bbdce99bea865f[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Mon Sep 30 14:15:33 2024 +0100
+
+    Update conftest.py
+
+[33mcommit 99d83c796294b6c5a75947d9bdaebc10f97de431[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Mon Sep 30 14:07:39 2024 +0100
+
+    Update conftest.py
+
+[33mcommit 6439eb34f620a344b2e3bc936673cdfd0933d63f[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Mon Sep 30 13:56:14 2024 +0100
+
+    Update Report_workflow.yml
+
+[33mcommit 869a3d346d76058d77cbac81cb0f26e3b7b58d43[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Mon Sep 30 13:48:33 2024 +0100
+
+    Update Report_workflow.yml
+
+[33mcommit d9c18cd81be10f297fbf675d2061b381346f2563[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Mon Sep 30 13:33:39 2024 +0100
+
+    Update Report_workflow.yml
+
+[33mcommit 07b4278131de2ce964833c41cb9fbde7422b15c4[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Mon Sep 30 13:25:36 2024 +0100
+
+    Update Report_workflow.yml
+
+[33mcommit 25c37cfa5cfe0a5b68526227ee3850acbf56f180[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Mon Sep 30 13:23:31 2024 +0100
+
+    Update Report_workflow.yml
+
+[33mcommit e2e56b246cf92380087ded7c3ca8ddf0e4b04df1[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Mon Sep 30 13:15:35 2024 +0100
+
+    Update Report_workflow.yml
+
+[33mcommit 6bbd493645c122a2090ae343540fbbb0c79ccd73[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Mon Sep 30 13:05:10 2024 +0100
+
+    Report_workflow.yml
+
+[33mcommit df84a67a178fc5f23f4e66594a347891a56fafbf[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Sun Sep 29 14:52:37 2024 +0100
+
+    Update main.yml
+
+[33mcommit 3f79ff6dc0c2855068ab5089584981c4a66e855d[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Sun Sep 29 14:49:16 2024 +0100
+
+    Update main.yml
+
+[33mcommit 516d27f5a823ba17cb3e611ca49d305d9f302093[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Wed Sep 25 23:26:27 2024 +0100
+
+    Update main.yml
+
+[33mcommit d81278ca2bb3257111fd622ee2280c8b429f596b[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Wed Sep 25 23:14:01 2024 +0100
+
+    Update main.yml
+
+[33mcommit a52700cd26149ce346ae9564a0c4d7e45c9e1a9f[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Wed Sep 25 22:51:14 2024 +0100
+
+    Update main.yml
+
+[33mcommit a46ee078aeb5db9558664cbd3279f93c0937e53e[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Wed Sep 25 22:37:48 2024 +0100
+
+    Update testLogin.py
+
+[33mcommit 6bbab76a55e31e409a5a71cda6102097e58332d9[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Wed Sep 25 22:36:18 2024 +0100
+
+    Update testLogin.py
+
+[33mcommit 276855645b416eb6b8a6b1a2f2f273d5880834d3[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Wed Sep 25 22:34:12 2024 +0100
+
+    Update main.yml
+
+[33mcommit 13d33686795e5b021d4f7033b46fc2e45e43e437[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Wed Sep 25 22:30:25 2024 +0100
+
+    Update main.yml
+
+[33mcommit 97a8e7f489b2659e306b64f266e491ad13c80d8f[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Wed Sep 25 22:14:32 2024 +0100
+
+    Update main.yml
+
+[33mcommit e9fbdede46d746a3ea40fcc7e5dcca7e5b53abf3[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Wed Sep 25 22:13:30 2024 +0100
+
+    Update main.yml
+
+[33mcommit c35be7fd4f7a2a7a89f7061e8d607c8a6e396ffa[m
+Author: Uyah <uyahanthony008@gmail.com>
+Date:   Sat Sep 21 23:48:37 2024 +0100
+
+    Reverting
+
+[33mcommit 57905edb16640afff911e7630cfff71585d9c3e3[m
+Author: Uyah <uyahanthony008@gmail.com>
+Date:   Sat Sep 21 23:40:01 2024 +0100
+
+    New changes
+
+[33mcommit d105737c965fb47800ee4c44374008e4555fbdad[m
+Merge: 30687ec 03e0114
+Author: Uyah <uyahanthony008@gmail.com>
+Date:   Sat Sep 21 23:10:31 2024 +0100
+
+    There are some corrections
+
+[33mcommit 30687ec9f0faf5789407b63acf2dfff81e341b56[m
+Author: Uyah <uyahanthony008@gmail.com>
+Date:   Sat Sep 21 23:06:07 2024 +0100
+
+    Changes
+
+[33mcommit f74a2596869263b8a00ad282a5611b31ac83eaa0[m
+Author: Uyah <uyahanthony008@gmail.com>
+Date:   Sat Sep 21 23:02:42 2024 +0100
+
+    changes
+
+[33mcommit 03e0114f022e65bda2b8f9f042f8a43c17ba8d4b[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Sat Sep 21 20:52:29 2024 +0100
+
+    Update main.yml
+
+[33mcommit bea629bf2c55ab90b5f37129cd71d2dab259e01a[m
+Author: Uyah <uyahanthony008@gmail.com>
+Date:   Sat Sep 21 20:39:03 2024 +0100
+
+    This will trigger the test on the pipeline
+
+[33mcommit 11a45652c58d9d5fb576ca944e923bf6b9670819[m
+Author: Uyah <uyahanthony008@gmail.com>
+Date:   Sat Sep 21 20:35:43 2024 +0100
+
+    Update to the test file
+
+[33mcommit ba8f3ec8eef955e8586acd0bf59ee7593ec3ff6c[m
+Author: Uyah <uyahanthony008@gmail.com>
+Date:   Sat Sep 21 20:35:43 2024 +0100
+
+    Update to the test file
+
+[33mcommit ae6f9b810ade3d972e69bce56a13d30256671550[m
+Author: ANTHONY UYAH <uyahanthony008@gmail.com>
+Date:   Sat Sep 21 20:33:12 2024 +0100
+
+    Create main.yml
+
+[33mcommit 826878ea401b0f961d09dc45b1b2caa5bd7e3111[m
+Author: Uyah <uyahanthony008@gmail.com>
+Date:   Sat Sep 21 20:02:17 2024 +0100
+
+    Tagging of the negative test cases
+
+[33mcommit 0533e94df6d26e55c63abfeebbe6d69b752f19a9[m
+Author: Uyah <uyahanthony008@gmail.com>
+Date:   Sat Sep 21 19:58:58 2024 +0100
+
+    This is my first commit for my cicd project

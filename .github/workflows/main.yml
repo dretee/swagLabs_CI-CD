@@ -60,7 +60,7 @@ jobs:
           pytest testLogin.py --browser=chrome --html=reports/report_for_login_tests.html --maxfail=1
           pytest AddToCart.py --browser=chrome --html=reports/report_for_addition_to_cart.html --maxfail=1
           pytest testLinks.py --browser=chrome --html=reports/report_for_testing_for_broken_links.html --maxfail=1
-        continue-on-error: true # Optionally let the pipeline continue if tests fail
+        continue-on-error: false # Optionally let the pipeline continue if tests fail
 
       # Upload Test Reports
       # Upload the login test report
