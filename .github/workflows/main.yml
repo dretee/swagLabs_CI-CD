@@ -62,7 +62,7 @@ jobs:
 
 # Upload login reports
       - name: Upload Login Test Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: login-test-report
           path: test/reports/report_for_login_tests.html
@@ -77,7 +77,7 @@ jobs:
 
       # Upload the Add to Cart test report
       - name: Upload Add to Cart Test Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: add-to-cart-test-report
           path: test/reports/report_for_addition_to_cart.html
@@ -93,7 +93,7 @@ jobs:
 
       # Upload the Broken Links test report
       - name: Upload Broken Links Test Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: broken-links-test-report
           path: test/reports/report_for_testing_for_broken_links.html
