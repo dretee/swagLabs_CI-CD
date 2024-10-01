@@ -1,0 +1,75 @@
+# Python package
+# Create and test a Python package on multiple Python versions.
+# Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/python
+
+trigger:
+  branches:
+    include:
+      - main
+
+pr:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+jobs:
+- job: Run_Selenium_Tests
+  displayName: 'Run Selenium Tests on Chrome'
+
+  steps:
+  # Checkout code from the repository
+  - task: Checkout@v2
+    displayName: 'Checkout Repository'
+
+  # Install Python 3.10
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.10'
+      addToPath: true
+    displayName: 'Set up Python 3.10'
+
+  # Install Chrome and ChromeDriver
+  - script: |
+      sudo apt-get update
+      sudo apt-get install -y google-chrome-stable
+      wget -N https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip
+      unzip chromedriver_linux64.zip
+      sudo mv -f chromedriver /usr/local/bin/chromedriver
+      sudo chmod +x /usr/local/bin/chromedriver
+    displayName: 'Set up Chrome and ChromeDriver'
+  
+  # Install dependencies, pytest, and pytest-html
+  - script: |
+      python -m pip install --upgrade pip
+      pip install pytest pytest-html
+      if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    displayName: 'Install Python Dependencies'
+  
+  # Run Selenium tests
+  - script: |
+      cd tests  # Make sure the correct folder name is used here
+      mkdir -p reports
+      pytest test_login_page.py --browser=chrome --html=reports/report.html --maxfail=1
+    displayName: 'Run Selenium Tests'
+    continueOnError: true  # Optionally continue the pipeline even if tests fail
+  
+  # Publish test results as pipeline artifacts
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: 'tests/reports/report.html'
+      artifactName: 'selenium-test-report'
+    displayName: 'Upload Test Report'
+  
+  # Send email notification if tests fail
+  - task: SendMail@1
+    displayName: 'Send Email Notification on Failure'
+    inputs:
+      subject: 'Selenium Test Failure'
+      body: 'Tests failed for the repository on branch $(Build.SourceBranchName).'
+      to: 'your-email@example.com'
+      from: 'cicd@example.com'
+    condition: failed()
