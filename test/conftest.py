@@ -39,7 +39,7 @@ def driver(request):
         driver = webdriver.Firefox(service=FirefoxService(executable_path=GECKO_DRIVER), options=options)
 
     # Implicit wait setup for our framework
-    #driver.implicitly_wait(10)
+    driver.implicitly_wait(10)
     yield driver
 
     # Tear down
