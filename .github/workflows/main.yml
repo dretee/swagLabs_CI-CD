@@ -57,15 +57,32 @@ jobs:
         run: |
           cd test
           mkdir -p reports
-          pytest testLogin.py --browser=chrome --html=reports/report.html --maxfail=1
+          pytest testLogin.py --browser=chrome --html=reports/report_for_login_tests.html --maxfail=1
+          pytest AddToCart.py --browser=chrome --html=reports/report_for_addition_to_cart.html --maxfail=1
+          pytest testLinks.py --browser=chrome --html=reports/report_for_testing_for_broken_links.html --maxfail=1
         continue-on-error: true # Optionally let the pipeline continue if tests fail
 
       # Upload Test Reports
-      - name: Upload Test Report
+      # Upload the login test report
+      - name: Upload Login Test Report
         uses: actions/upload-artifact@v3
         with:
-          name: selenium-test-report
-          path: test/reports/report.html
+          name: login-test-report
+          path: tests/reports/report_for_login_tests.html
+
+      # Upload the Add to Cart test report
+      - name: Upload Add to Cart Test Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: add-to-cart-test-report
+          path: tests/reports/report_for_addition_to_cart.html
+
+      # Upload the Broken Links test report
+      - name: Upload Broken Links Test Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: broken-links-test-report
+          path: tests/reports/report_for_testing_for_broken_links.html
 
       # Send email notification if tests fail
       - name: Send Email Notification on Failure
