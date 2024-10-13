@@ -5,7 +5,7 @@ from Utilities.Logger import Information_Logger
 from Utilities import generalInfor
 
 
-class TestCheckOutProcess():
+class TestCheckOutProcess:
     # Initialize class variables
     base_url = generalInfor.base_url
     logger = Information_Logger.logging_info()
