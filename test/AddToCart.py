@@ -1,15 +1,16 @@
 import time
 from selenium.webdriver.common.by import By
 from Utilities.Logger import Information_Logger
+from Utilities import generalInfor
 from PageObjects.AddtocartObejects import AddcartObject
 
 
 class TestAddRemoveToCart:
-    base_url = "https://www.saucedemo.com"
+    base_url = generalInfor.base_url
     logger = Information_Logger.logging_info()
-    Username_ID = 'user-name'
-    Password_ID = 'password'
-    Login_Button_ID = 'login-button'
+    Username_ID = generalInfor.Username_ID
+    Password_ID = generalInfor.Password_ID
+    Login_Button_ID = generalInfor.Login_Button_ID
 
     def test_addtocart(self, driver):
         # Initialize driver and navigate to the application URL

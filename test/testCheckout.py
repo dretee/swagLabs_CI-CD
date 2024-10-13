@@ -1,18 +1,17 @@
-
 from selenium.webdriver.common.by import By
 
 from PageObjects.AddtocartObejects import AddcartObject
 from Utilities.Logger import Information_Logger
-
+from Utilities import generalInfor
 
 
 class TestCheckOutProcess():
     # Initialize class variables
-    base_url = "https://www.saucedemo.com"
+    base_url = generalInfor.base_url
     logger = Information_Logger.logging_info()
-    Username_ID = 'user-name'
-    Password_ID = 'password'
-    Login_Button_ID = 'login-button'
+    Username_ID = generalInfor.Username_ID
+    Password_ID = generalInfor.Password_ID
+    Login_Button_ID = generalInfor.Login_Button_ID
 
     def test_checkoutPayment_01(self, driver):
         # This payment method encompasses the selection and ordering of items,
@@ -63,7 +62,6 @@ class TestCheckOutProcess():
         total_price_element = self.driver.find_element(By.XPATH, "//div[@class='summary_subtotal_label']")
         total_price = (float(total_price_element.text.replace("Item total: $", "")))
         if total_price == total:
-
             # If total prices match, complete the order
             self.ac.Finishbutton_click()
             self.ac.LogoutSequence()
@@ -73,7 +71,6 @@ class TestCheckOutProcess():
             displayed_text = "Thank you for your order!"
             assert actual_text.__eq__(displayed_text), "*********** TEST FAILED ************"
             self.logger.info("******** TEST WAS SUCCESSFUL *********")
-
 
     def test_checkoutpayment_02(self, driver):
         # This payment method encompasses the selection and ordering of NO items,
