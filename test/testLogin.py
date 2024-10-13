@@ -44,11 +44,14 @@ class TestLoginDDT001:
             "***** THIS TEST FAILED ******")
         self.logger.info("***** THIS TEST PASSED ******")
 
-    # Negative Tes Cases
-    @pytest.mark.parametrize("username, password, error_message", [
+    # Negative Test Cases Data and Test Script
+    test_data = [
         ("locked_out_user", "secret_sauce", "Epic sadface: Sorry, this user has been locked out."),
         ("invalidUser", "invalidPass", "Epic sadface: Username and password do not match any user in this service"),
-        ('', '', 'Epic sadface: Username is required')])
+        ('', '', 'Epic sadface: Username is required')
+    ]
+
+    @pytest.mark.parametrize("username, password, error_message", test_data)
     def test_invalid_user_login(self, driver, username, password, error_message):
         self.driver = driver
         self.page_navigation(self.driver)
